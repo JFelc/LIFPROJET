@@ -49,7 +49,25 @@
 </nav>
 
     <main role="main" class="container">
-           <form> </form>
+           <form action="get" class="form-filter" autocomplete="on"> 
+           <div class = "inside-form">
+               <label for="RefGeo" > Choix réferentiel géographique : </label>
+                <select name="Geo" id="Geo-select">
+                    <option value=""> Choisissez une option </option>
+                 <!-- Script JS suggestion Dép/Région --> 
+                </select>
+                  <label for="RefNat"> Ville : </label>
+                <select name="Town" id="Town-select">
+                 <!-- Script JS adaptatif au premier choix -->
+                   <label for="CommName"> Now de la commune </label>
+                <select name="CommName" id="idk-yet">
+                 <label for="Year"> Année </label>
+                <select name="Year" id="Year-select">
+                </select>
+
+                
+           </div> 
+           </form>
 
     </main><!-- /.container -->
 
