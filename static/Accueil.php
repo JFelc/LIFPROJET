@@ -19,21 +19,43 @@
     <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 
+<?php include('static/Navbar.php'); ?>
+
 <body>
 
-<!-- A mettre dans un fichier static -->    
-
-
-
     <main role="main" class="container">
+        <div class="container" name="caroussel">
+            
 
-        <div class="text-center mt-5 pt-5">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
         </div>
 
+        <div class="container" name="graph_accueil">
+            <div class="row">
+
+                <div class="col-sm">
+                    <!-- Premier graph -->
+                </div>
+
+                <div class="col-sm">
+                    <!-- Deuxième graph -->
+                </div>
+
+                <div class="col-sm">
+                    <!-- Troisième graph --> 
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container" name="text_accueil">
+            <p>
+                Bonjour c'est la page d'accueil.
+            </p>
+            
+        </div>
     </main><!-- /.container -->
 
+<?php  include('static/Footer.php'); ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

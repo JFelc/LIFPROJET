@@ -1,1 +1,1 @@
-ceci est un readmi
+ceci est un readme
