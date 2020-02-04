@@ -12,6 +12,7 @@
     <!--Template based on URL below-->
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
+   <link rel="stylesheet" href="filter.css"></link>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -48,28 +49,37 @@
     </div>
 </nav>
 
-    <main role="main" class="container">
+    <div class="container">
+          <div class="row justify-content-center">
            <form action="get" class="form-filter" autocomplete="on"> 
-           <div class = "inside-form">
-               <label for="RefGeo" > Choix réferentiel géographique : </label>
-                <select name="Geo" id="Geo-select">
-                    <option value=""> Choisissez une option </option>
+             <div class="col-sm">
+              <label for="RefGeo" > Choix réferentiel géographique : </label>
+                    <select name="Geo" id="Geo-select">
+                        <option value=""> Choisissez une option </option>
                  <!-- Script JS suggestion Dép/Région --> 
-                </select>
-                  <label for="RefNat"> Ville : </label>
-                <select name="Town" id="Town-select">
+                    </select>
+            </div>
+            <div class="col-sm">
+                <label for="RefNat"> Ville : </label>
+                    <select name="Town" id="Town-select">
                  <!-- Script JS adaptatif au premier choix -->
-                   <label for="CommName"> Now de la commune </label>
-                <select name="CommName" id="idk-yet">
-                 <label for="Year"> Année </label>
-                <select name="Year" id="Year-select">
-                </select>
-
-                
-           </div> 
+                    </select> 
+            </div>
+            <div class="col-sm">
+                <label for="CommName"> Now de la commune </label>
+                   <select name="CommName" id="idk-yet">
+                   
+                   </select>
+            </div>
+            <div class="col-sm"> 
+                <label for="Year"> Année </label>
+                    <select name="Year" id="Year-select">
+                    </select>
+            </div>
+              
            </form>
-
-    </main><!-- /.container -->
+        </div>
+    </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
