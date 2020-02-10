@@ -1,7 +1,7 @@
 <?php
 $routes = array(
-    'recherche' => array( 'vue' => 'Recherche' , 'controleur' => 'CtrlRecherche'),
-    'graphiques' => array( 'vue' => 'Graphiques' , 'controleur' => 'CtrlGraphiques'),
+    'filter' => array( 'vue' => 'Filter' , 'controleur' => 'CtrlFilter'),
+    'graphiques' => array( 'vue' => 'Graph' , 'controleur' => 'CtrlGraph'),
     'cartes' => array( 'vue' => 'Cartes' , 'controleur' => 'CtrlCartes'),
     'propos' => array( 'vue' => 'Propos' , 'controleur' => 'CtrlPropos')
 );

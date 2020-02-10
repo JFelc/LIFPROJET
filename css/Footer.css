@@ -1,0 +1,10 @@
+#footer {
+	position: fixed;
+	height: 5em;
+	bottom: 0em;
+	left: 0em;
+	right: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+	border: solid 1px;
+}

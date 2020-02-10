@@ -16,43 +16,49 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Place your stylesheet here-->
-    <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="css/Accueil.css" rel="stylesheet" type="text/css">
+    <link href="css/Footer.css" rel="stylesheet" type="text/css">
 </head>
 
 <?php include('static/Navbar.php'); ?>
 
 <body>
 
-    <main role="main" class="container">
-        <div class="container" name="caroussel">
+    <main role="main" class="container" id="conteneur_principal">
+       
+        <div class="container" id="caroussel">
             
+            <p> je suis le caroussel</p>
 
         </div>
 
-        <div class="container" name="graph_accueil">
+        <div class="container" id="graph_accueil">
             <div class="row">
 
                 <div class="col-sm">
                     <!-- Premier graph -->
+                    	<p>1er graph</p>
                 </div>
 
                 <div class="col-sm">
                     <!-- Deuxième graph -->
+                    <p>2e graph</p>
                 </div>
 
                 <div class="col-sm">
                     <!-- Troisième graph --> 
+                    <p>3e graph</p>
                 </div>
 
             </div>
         </div>
 
-        <div class="container" name="text_accueil">
+        <div class="row" id="text_accueil">
             <p>
                 Bonjour c'est la page d'accueil.
             </p>
-            
         </div>
+        
     </main><!-- /.container -->
 
 <?php  include('static/Footer.php'); ?>
