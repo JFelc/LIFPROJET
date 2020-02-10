@@ -19,34 +19,43 @@
     <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 
+<?php include('static/Navbar.php'); ?>
+
 <body>
 
-<!-- A mettre dans un fichier static -->    
-
-
-
     <main role="main" class="container">
-        
-        <div class="text-center mt-5 pt-5">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Welcome to our awesome website</p>
+        <div class="container" name="caroussel">
+            
+
         </div>
 
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Third slide">
-    </div>
-  </div>
-</div>
+        <div class="container" name="graph_accueil">
+            <div class="row">
+
+                <div class="col-sm">
+                    <!-- Premier graph -->
+                </div>
+
+                <div class="col-sm">
+                    <!-- Deuxième graph -->
+                </div>
+
+                <div class="col-sm">
+                    <!-- Troisième graph --> 
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container" name="text_accueil">
+            <p>
+                Bonjour c'est la page d'accueil.
+            </p>
+            
+        </div>
     </main><!-- /.container -->
 
+<?php  include('static/Footer.php'); ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
