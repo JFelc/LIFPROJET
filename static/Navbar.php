@@ -11,11 +11,11 @@
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=filter">Filtre</a>
+				<a class="nav-link" href="index.php?page=Filter">Filtre</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="#">Stats</a>
+				<a class="nav-link" href="index.php?page=Graph">Stats</a>
 			</li>
 
 			<li class="nav-item">

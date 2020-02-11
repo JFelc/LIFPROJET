@@ -1,7 +1,7 @@
 <div class="page-footer font-small" id="footer">
 	<div class="row">
 		<div class="col-sm">
-			<p>col 1</p>
+			<img src="Images/logo_gouv.jpg" class="rounded float-left">
 		</div>
 		
 		<div class="col-sm">

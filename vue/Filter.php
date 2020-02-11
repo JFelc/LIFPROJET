@@ -56,7 +56,7 @@
 			</form>
 		</div>
 	</div><!-- /.container -->
-
+	<?php  include('static/Footer.php'); ?>
 	<?php  include('static/Footer.php'); ?>
 
 	<!-- Bootstrap core JavaScript
