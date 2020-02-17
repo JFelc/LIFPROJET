@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- Place your stylesheet here-->
-	<link href="/css/Filter.css" rel="stylesheet" type="text/css">
+	<link href="css/Filter.css" rel="stylesheet" type="text/css">
 	<link href="css/Footer.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -25,28 +25,29 @@
 	<?php include('static/Navbar.php'); ?>
 
 	<div class="container">
+		<h2> Filtres de recherche </h2>
 		<div class="row">
 			<form action="get" class="form-filter" autocomplete="on">
-				<div class="col-sm">
+				<div class="row">
 					<label for="RefGeo"> Choix réferentiel géographique : </label>
 					<select name="Geo" id="Geo-select">
 						<option value=""> Choisissez une option </option>
 						<!-- Script JS suggestion Dép/Région -->
 					</select>
 				</div>
-				<div class="col-sm">
+				<div class="row">
 					<label for="RefNat"> Ville : </label>
 					<select name="Town" id="Town-select">
 						<!-- Script JS adaptatif au premier choix -->
 					</select>
 				</div>
-				<div class="col-sm">
+				<div class="row">
 					<label for="CommName"> Now de la commune </label>
 					<select name="CommName" id="idk-yet">
 
 					</select>
 				</div>
-				<div class="col-sm">
+				<div class="row">
 					<label for="Year"> Année </label>
 					<select name="Year" id="Year-select">
 					</select>
@@ -55,7 +56,7 @@
 			</form>
 		</div>
 	</div><!-- /.container -->
-
+	<?php  include('static/Footer.php'); ?>
 	<?php  include('static/Footer.php'); ?>
 
 	<!-- Bootstrap core JavaScript

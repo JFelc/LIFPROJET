@@ -16,31 +16,55 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Place your stylesheet here-->
-    <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="css/Graph.css" rel="stylesheet" type="text/css">
+    <link href="css/Footer.css" rel="stylesheet" type="text/css">
 </head>
+
+<?php include('static/Navbar.php'); ?>
 
 <body>
 
-    <div class="container">
+    <div class="container-fluid" id="main"> <!-- A automatiser avec du js en fonction des filtres -->
         <div class="row justify-content-center">
-                <div class="col-sm">
-                
-                </div>
-                <div class="col-sm">
-                    
-                </div>
-                <div class="col-sm">
-                  
-                </div>
-                <div class="col-sm">
-                  
+
+                <div class="col-6 border">
+                    <p> coucou </p>
                 </div>
 
-         
+                <div class="col-6 border">
+                    <p> coucou </p>
+                </div>   
         </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+        </div>
+        
+        
+        <div class="row justify-content-center">
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+        </div>
+        
+
     </div><!-- /.container -->
 
-
+    <?php  include('static/Footer.php'); ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
