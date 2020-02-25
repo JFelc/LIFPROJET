@@ -6,7 +6,7 @@
 
 .FirstSelect{
     color: aqua;
-}
+}    
 
 #Geo-select , #Town-select , #idk-yet , #Year-select
 {
@@ -16,6 +16,6 @@
 #contFilter > .row, form > .row
 {
     text-align: left;
-    margin-left: 1.5em ;
+    margin-left: 1.5em ; 
     margin: 0.5em;
 }
