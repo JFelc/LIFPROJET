@@ -33,7 +33,7 @@
 
                 <div class="col-6 border">
                     <p> coucou </p>
-                </div>   
+                </div>
         </div>
 
         <div class="row justify-content-center">
@@ -47,8 +47,8 @@
             </div>
 
         </div>
-        
-        
+
+
         <div class="row justify-content-center">
 
             <div class="col-sm border">
@@ -60,7 +60,7 @@
             </div>
 
         </div>
-        
+
 
     </div><!-- /.container -->
 

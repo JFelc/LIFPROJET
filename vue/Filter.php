@@ -21,7 +21,7 @@
 
 <body>
 
-	
+
 
 	<div class="container" id="contFilter">
 		<h2> Filtres de recherche </h2>
