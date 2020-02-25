@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    border: solid 1px black;
+    align-content: center;
+    margin-top : 10em;
+    padding-bottom: 25em;
+}
+
+.FirstSelect{
+    color: aqua;
+}    
