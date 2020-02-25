@@ -16,11 +16,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Place your stylesheet here-->
-    <link href="css/Accueil.css" rel="stylesheet" type="text/css">
-    <link href="css/Footer.css" rel="stylesheet" type="text/css">
+
 </head>
 
-<?php include('static/Navbar.php'); ?>
 
 <body>
 
@@ -61,7 +59,6 @@
         
     </main><!-- /.container -->
 
-<?php  include('static/Footer.php'); ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

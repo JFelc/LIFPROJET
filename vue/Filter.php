@@ -17,14 +17,13 @@
 
 	<!-- Place your stylesheet here-->
 	<link href="css/Filter.css" rel="stylesheet" type="text/css">
-	<link href="css/Footer.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-	<?php include('static/Navbar.php'); ?>
+	
 
-	<div class="container">
+	<div class="container" id="contFilter">
 		<h2> Filtres de recherche </h2>
 		<div class="row">
 			<form action="get" class="form-filter" autocomplete="on">
@@ -56,8 +55,6 @@
 			</form>
 		</div>
 	</div><!-- /.container -->
-	<?php  include('static/Footer.php'); ?>
-	<?php  include('static/Footer.php'); ?>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->

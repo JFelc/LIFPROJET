@@ -13,7 +13,7 @@
     margin-left: 1em ;
 }
 
-.row
+#contFilter > .row, form > .row
 {
     text-align: left;
     margin-left: 1.5em ; 

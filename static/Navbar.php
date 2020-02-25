@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-	<a class="navbar-brand" href="#">Navbar</a>
+	<!--<a class="navbar-brand" href="#">Navbar</a>-->
+	<img src="Images/index.png" class="img-fluid img-thumbnail" id="img_nav">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
