@@ -11,13 +11,13 @@ session_start(); // démarre ou reprend une session
 //require('include/includes.php'); // inclut le fichier avec fonctions (notamment celles du modele)
 require('include/routes.php'); // fichiers de routes
 
-include('static/Navbar.php'); 
+include('static/Navbar.php');
 
-if(isset($_GET['page'])) 
+if(isset($_GET['page']))
 {
 	$nomPage = $_GET['page'];
-	
-    if(isset($routes[$nomPage])) 
+
+    if(isset($routes[$nomPage]))
     {
 		$controleur = $routes[$nomPage]['controleur'];
 		$vue = $routes[$nomPage]['vue'];
@@ -32,7 +32,6 @@ else {
 	include('static/Accueil.php');
 }
 
-include('static/Footer.php'); 
+include('static/Footer.php');
 
 ?>
-

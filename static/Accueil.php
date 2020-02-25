@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
     <title>Starter Template · Bootstrap</title>
-    
+
     <!--Template based on URL below-->
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
@@ -23,9 +23,9 @@
 <body>
 
     <main role="main" class="container" id="conteneur_principal">
-       
+
         <div class="container" id="caroussel">
-            
+
             <p> je suis le caroussel</p>
 
         </div>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col-sm">
-                    <!-- Troisième graph --> 
+                    <!-- Troisième graph -->
                     <p>3e graph</p>
                 </div>
 
@@ -56,7 +56,7 @@
                 Bonjour c'est la page d'accueil.
             </p>
         </div>
-        
+
     </main><!-- /.container -->
 
 
