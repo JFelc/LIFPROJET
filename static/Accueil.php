@@ -16,35 +16,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Place your stylesheet here-->
-    <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
+
 </head>
+
 
 <body>
 
-<!-- A mettre dans un fichier static -->    
+    <main role="main" class="container" id="conteneur_principal">
+       
+        <div class="container" id="caroussel">
+            
+            <p> je suis le caroussel</p>
 
-
-
-    <main role="main" class="container">
-        
-        <div class="text-center mt-5 pt-5">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Welcome to our awesome website</p>
         </div>
 
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Third slide">
-    </div>
-  </div>
-</div>
+        <div class="container" id="graph_accueil">
+            <div class="row">
+
+                <div class="col-sm">
+                    <!-- Premier graph -->
+                    	<p>1er graph</p>
+                </div>
+
+                <div class="col-sm">
+                    <!-- Deuxième graph -->
+                    <p>2e graph</p>
+                </div>
+
+                <div class="col-sm">
+                    <!-- Troisième graph --> 
+                    <p>3e graph</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" id="text_accueil">
+            <p>
+                Bonjour c'est la page d'accueil.
+            </p>
+        </div>
+        
     </main><!-- /.container -->
 
 

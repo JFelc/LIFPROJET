@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
     <title>Starter Template · Bootstrap</title>
-    
+
     <!--Template based on URL below-->
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
@@ -16,37 +16,55 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Place your stylesheet here-->
-    <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="css/Graph.css" rel="stylesheet" type="text/css">
+    <link href="css/Footer.css" rel="stylesheet" type="text/css">
 </head>
+
+<?php include('static/Navbar.php'); ?>
 
 <body>
 
-<!-- A mettre dans un fichier static -->    
+    <div class="container-fluid" id="main"> <!-- A automatiser avec du js en fonction des filtres -->
+        <div class="row justify-content-center">
 
+                <div class="col-6 border">
+                    <p> coucou </p>
+                </div>
 
-
-    <main role="main" class="container">
-        
-        <div class="text-center mt-5 pt-5">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Welcome to our awesome website</p>
+                <div class="col-6 border">
+                    <p> coucou </p>
+                </div>   
         </div>
 
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/cat.jpg" alt="Third slide">
-    </div>
-  </div>
-</div>
-    </main><!-- /.container -->
+        <div class="row justify-content-center">
 
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+        </div>
+        
+        
+        <div class="row justify-content-center">
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+            <div class="col-sm border">
+                <p> coucou </p>
+            </div>
+
+        </div>
+        
+
+    </div><!-- /.container -->
+
+    <?php  include('static/Footer.php'); ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -56,4 +74,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
