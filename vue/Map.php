@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="../../../../favicon.ico">
 	<title>Starter Template · Bootstrap</title>
-	<link href="Map.css" rel="stylesheet" type="text/css">
+
 
 	<!--Template based on URL below-->
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
@@ -19,7 +19,7 @@
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
 	<!-- Place your stylesheet here-->
-	<link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="css/Map.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
