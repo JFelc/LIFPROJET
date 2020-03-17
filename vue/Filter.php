@@ -26,17 +26,25 @@
 
 	<script>
 		function showHint() {
+
+			ChoixAffichage();
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					var result = this.responseText;
-					var ArrayResult = new Array();
-					ArrayResult.length = 700000;
-					ArrayResult = JSON.parse(result);
+					var ArrayResult = JSON.parse(result);
 					console.log(ArrayResult.length);
-					console.log(ArrayResult);
-					var dataList = document.getElementById('Geo-select');
-					ArrayResult.forEach(function(item) {
+					console.log(ArrayResult[0].values);
+					var Replacer = document.getElementById("Replace-form");
+
+					//Faire une condition avec str pour le script d'auto.
+					//Typiquement un if(str) -> 
+
+
+					var dataList = document.getElementById('datalist-replacer-town');
+
+
+					ArrayResult[0].values.forEach(function(item) {
 						var options = document.createElement('option');
 						options.value = item;
 						dataList.appendChild(options);
@@ -47,7 +55,7 @@
 				}
 			}
 
-			xmlhttp.open("GET", "test.php", true);
+			xmlhttp.open("GET", "test.php", true); //Ajouter str à showHint et au path pour pouvoir appeller des scripts diff
 			xmlhttp.send();
 		}
 
@@ -58,20 +66,18 @@
 
 			var region = document.getElementById('Geo-select');
 			var filter = document.getElementById("Form-filter");
+			var rep = document.getElementById('Replace-form');
+			rep.hidden = true;
 			if (region.options[region.selectedIndex].text == 'Région') {
 				document.getElementById('Town-holder').hidden = true;
 				document.getElementById('Comm-holder').hidden = true;
-				var label = document.createElement("LABEL");
-				var Replacement = document.createTextNode("Nom de la Région");
-				label.setAttribute("for", "Replacement");
-				label.appendChild(Replacement);
-				filter.insertBefore(label, document.getElementById("Replacement"));
-				var select = document.createElement("select");
-				var option = document.createElement("option");
-				option.text = " ";
-				select.appendChild(option);
-				filter.insertBefore(select, null);
-				return "Région";
+				document.getElementById('Replace-form').hidden = false;
+				var Replace = document.createTextNode("Nom de la Région");
+				var labelReplace = document.getElementById("Replacer");
+				labelReplace.appendChild(Replace);
+
+
+
 
 			} else if (region.options[region.selectedIndex].text == 'Département') {
 				document.getElementById('Town-holder').hidden = true;
@@ -88,6 +94,7 @@
 				filter.insertBefore(select, null);
 				return "Département";
 			}
+
 		}
 
 	</script>
@@ -123,7 +130,7 @@
 			<form id="Form-filter" action="get" class="form-filter" autocomplete="on">
 				<div class="col-sm">
 					<label for="RefGeo"> Choix réferentiel géographique : </label>
-					<select name="Geo" id="Geo-select" onchange="ChoixAffichage()">
+					<select name="Geo" id="Geo-select" onchange="showHint()">
 						<option value=""> Choisissez une option </option>
 						<option value="Region"> Région</option>
 						<option value=" Departement "> Département</option>
@@ -133,9 +140,8 @@
 				</div>
 				<div id="Town-holder" class="col-sm">
 					<label for="RefNat"> Ville : </label>
-					<select name="Town" id="Town-select">
-						<!-- Script JS adaptatif au premier choix -->
-					</select>
+					<input type="text" id="ajax" list="datalist-replacer-town">
+					<datalist id="datalist-replacer-town"> </datalist>
 				</div>
 				<div id="Comm-holder" class="col-sm">
 					<label for="CommName"> Now de la commune </label>
@@ -148,6 +154,12 @@
 					<select name="Year" id="Year-select">
 					</select>
 				</div>
+				<div class="col-sm" id="Replace-form">
+					<label id="Replacer" for="Replace"></label>
+					<input type="text" id="ajax" list="datalist-replacer">
+					<datalist id="datalist-replacer"> </datalist>
+				</div>
+
 
 			</form>
 		</div>
