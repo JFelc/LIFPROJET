@@ -41,7 +41,7 @@
 					//Typiquement un if(str) -> 
 
 
-					var dataList = document.getElementById('datalist-replacer-town');
+					var dataList = document.getElementById('datalist-replacer');
 
 
 					ArrayResult[0].values.forEach(function(item) {
@@ -159,7 +159,6 @@
 					<input type="text" id="ajax" list="datalist-replacer">
 					<datalist id="datalist-replacer"> </datalist>
 				</div>
-
 
 			</form>
 		</div>

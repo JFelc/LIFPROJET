@@ -26,8 +26,10 @@
 
 	<!-- A mettre dans un fichier static -->
 
+	<script>
 
 
+	</script>
 	<main role="main" class="container">
 
 		<div class="text-center mt-5 pt-5">
@@ -36,6 +38,18 @@
 		</div>
 		<div id="mapid">
 			<script>
+				function getColor(indice) {
+					return indice == "A" ? '#389C3B' :
+						indice == "B" ? '#1ED523' :
+						indice == "C" ? '#91E331' :
+						indice == "D" ? '#CCE526' :
+						indice == "E" ? '#CE6805' :
+						indice == "F" ? '#B35B05' :
+						indice == "G" ? '#FE4B01' :
+						'#FFEDA0';
+				}
+
+
 				var mymap = L.map('mapid').setView([45.75, 4.85], 13);
 				L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVsaWVuZiIsImEiOiJjazZ4dThjajEwN3owM2xta3p5NWN2eWc4In0.xL40ESstdyAMz6gjlVQ2fw', {
 					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -43,9 +57,33 @@
 					minZoom: 12,
 					id: 'mapbox/streets-v11',
 					accessToken: 'pk.eyJ1IjoianVsaWVuZiIsImEiOiJjazZ4dThjajEwN3owM2xta3p5NWN2eWc4In0.xL40ESstdyAMz6gjlVQ2fw'
+
 				}).addTo(mymap);
 
-				var marker = L.marker([45.75, 4.85]).addTo(mymap);
+				//var marker = L.marker([45.75, 4.85]).addTo(mymap);
+
+				var greenIcon = new L.Icon({
+					iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-green.png',
+					shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41]
+				});
+
+				L.marker([47.75, 4.85], {
+					icon: greenIcon
+				}).addTo(mymap);
+
+				function DPE_indicator(x, y, indice, map) {
+
+					var color = getColor(indice);
+
+					var marker = L.marker([x, y]).addTo(map);
+					marker.bindPopup("Indice DPE : " + indice);
+
+
+				}
 
 			</script>
 		</div>
