@@ -26,16 +26,18 @@
 
 	<script>
 		function showHint() {
-
-			ChoixAffichage();
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					var result = this.responseText;
 					var ArrayResult = JSON.parse(result);
-					console.log(ArrayResult.length);
-					console.log(ArrayResult[0].values);
+					console.log(result.length);
+					console.log(ArrayResult);
+
+
+
 					var Replacer = document.getElementById("Replace-form");
+					var res = new Set(ArrayResult.map((r) => r.region_name));
 
 					//Faire une condition avec str pour le script d'auto.
 					//Typiquement un if(str) -> 
@@ -44,18 +46,81 @@
 					var dataList = document.getElementById('datalist-replacer');
 
 
-					ArrayResult[0].values.forEach(function(item) {
+					res.forEach(function(item) {
 						var options = document.createElement('option');
 						options.value = item;
 						dataList.appendChild(options);
-
 					});
-
 
 				}
 			}
 
-			xmlhttp.open("GET", "test.php", true); //Ajouter str à showHint et au path pour pouvoir appeller des scripts diff
+			xmlhttp.open("GET", "requests/departements-region.json", true);
+			xmlhttp.send();
+		}
+
+		function showHintDep() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var result = this.responseText;
+					var ArrayResult = JSON.parse(result);
+					console.log(result.length);
+					console.log(ArrayResult);
+
+
+
+					var Replacer = document.getElementById("Replace-form");
+
+					//Faire une condition avec str pour le script d'auto.
+					//Typiquement un if(str) -> 
+
+
+					var dataList = document.getElementById('datalist-replacer');
+
+					ArrayResult.forEach(function(item) {
+						var options = document.createElement('option');
+
+						options.value = item.dep_name;
+						dataList.appendChild(options);
+					});
+
+				}
+			}
+
+			xmlhttp.open("GET", "requests/departements-region.json", true);
+			xmlhttp.send();
+		}
+
+		function showHintTown() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var result = this.responseText;
+					var ArrayResult = JSON.parse(result);
+					console.log(result.length);
+					console.log(ArrayResult);
+
+
+
+					var Replacer = document.getElementById("Replace-form");
+
+					//Faire une condition avec str pour le script d'auto.
+					//Typiquement un if(str) -> 
+
+
+					var dataList = document.getElementById('datalist-replacer');
+
+					ArrayResult[0].values.forEach(function(item) {
+						var options = document.createElement('option');
+						options.value = item;
+						dataList.appendChild(options);
+					});
+
+				}
+			}
+
+			xmlhttp.open("GET", "requests/requestTown.php", true);
 			xmlhttp.send();
 		}
 
@@ -66,12 +131,11 @@
 
 			var region = document.getElementById('Geo-select');
 			var filter = document.getElementById("Form-filter");
-			var rep = document.getElementById('Replace-form');
-			rep.hidden = true;
+
 			if (region.options[region.selectedIndex].text == 'Région') {
-				document.getElementById('Town-holder').hidden = true;
-				document.getElementById('Comm-holder').hidden = true;
-				document.getElementById('Replace-form').hidden = false;
+				showHint();
+				document.getElementById('Year-select').style.display = "block";
+				document.getElementById('Replace-form').style.display = "block";
 				var Replace = document.createTextNode("Nom de la Région");
 				var labelReplace = document.getElementById("Replacer");
 				labelReplace.appendChild(Replace);
@@ -80,57 +144,33 @@
 
 
 			} else if (region.options[region.selectedIndex].text == 'Département') {
-				document.getElementById('Town-holder').hidden = true;
-				document.getElementById('Comm-holder').hidden = true;
-				var label = document.createElement("LABEL");
-				var Replacement = document.createTextNode("Nom du département");
-				label.setAttribute("for", "Replacement");
-				label.appendChild(Replacement);
-				filter.insertBefore(label, document.getElementById("Replacement"));
-				var select = document.createElement("select");
-				var option = document.createElement("option");
-				option.text = " ";
-				select.appendChild(option);
-				filter.insertBefore(select, null);
-				return "Département";
+				showHintDep();
+				document.getElementById('Year-select').style.display = "block";
+				document.getElementById('Replace-form').style.display = "block";
+				var Replace = document.createTextNode("Nom du département");
+				var LabelReplace = document.getElementById("Replacer");
+				LabelReplace.appendChild(Replace);
+			} else if (region.options[region.selectedIndex].text == 'Commune') {
+				showHintTown();
+				document.getElementById('Year-select').style.display = "block";
+				document.getElementById('Replace-form').style.display = "block";
+				var Replace = document.createTextNode("Nom de la ville");
+				var LabelReplace = document.getElementById("Replacer");
+				LabelReplace.appendChild(Replace);
 			}
 
 		}
 
 	</script>
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
 
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Accueil</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Filtre</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Stats</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Carte</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">À propos</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
 
 	<div class="container">
 		<div class="row">
-			<form id="Form-filter" action="get" class="form-filter" autocomplete="on">
+			<form id="Form-filter" target="_blank" action="http://lif.sci-web.net/~logementsociaux/index.php?" method="GET" class="form-filter" autocomplete="on">
 				<div class="col-sm">
+					<input type="hidden" name="page" value="Map"> </input>
 					<label for="RefGeo"> Choix réferentiel géographique : </label>
-					<select name="Geo" id="Geo-select" onchange="showHint()">
+					<select name="Geo" id="Geo-select" onchange="ChoixAffichage()">
 						<option value=""> Choisissez une option </option>
 						<option value="Region"> Région</option>
 						<option value=" Departement "> Département</option>
@@ -138,29 +178,21 @@
 						<option value=" Commune "> Commune </option>
 					</select>
 				</div>
-				<div id="Town-holder" class="col-sm">
-					<label for="RefNat"> Ville : </label>
-					<input type="text" id="ajax" list="datalist-replacer-town">
-					<datalist id="datalist-replacer-town"> </datalist>
-				</div>
-				<div id="Comm-holder" class="col-sm">
-					<label for="CommName"> Now de la commune </label>
-					<select name="CommName" id="Comm-name">
-
-					</select>
-				</div>
-				<div class="col-sm">
+				<div class="col-sm" id="Year-select">
 					<label for="Year"> Année </label>
-					<select name="Year" id="Year-select">
+					<select name="Year">
+						<option value="2016"> 2016</option>
+						<option value="2017"> 2017</option>
 					</select>
 				</div>
 				<div class="col-sm" id="Replace-form">
 					<label id="Replacer" for="Replace"></label>
-					<input type="text" id="ajax" list="datalist-replacer">
-					<datalist id="datalist-replacer"> </datalist>
+					<input type="text" name="input_replacer" id="ajax" list="datalist-replacer">
+					<datalist id="datalist-replacer"> </datalist> </input>
 				</div>
-
+				<input type="submit" id="Submit" value="Envoyer"></input>
 			</form>
+
 		</div>
 	</div><!-- /.container -->
 

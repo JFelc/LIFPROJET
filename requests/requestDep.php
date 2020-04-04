@@ -1,9 +1,9 @@
 <?php $m = new  MongoDB\Driver\Manager("mongodb://localhost:27017");
-							$filter = ['LIBCOM' => ['$eq' => "Lyon"]];
+							$filter = ['depcom' => ['$eq' => "01001"]];
   							$query = new MongoDB\Driver\Query($filter);
 							$cmd = new MongoDB\Driver\Command([
-								'distinct' => 'A2018',
-								'key' => 'LIBCOM',
+								'distinct' => 'France2016',
+								'key' => 'depcom',
 								'query' => $query
 								
 							]);

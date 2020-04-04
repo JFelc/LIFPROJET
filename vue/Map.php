@@ -18,36 +18,60 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 	<script type="text/javascript" src="leaflet-color-markers-master/js/leaflet-color-markers.js"> </script>
+	<link href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" rel="stylesheet" />
+	<script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 	<!-- Place your stylesheet here-->
 	<link href="css/Map.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
 
 	<!-- A mettre dans un fichier static -->
 
-	<script>
-
-
-	</script>
 	<main role="main" class="container">
 
-		<div class="text-center mt-5 pt-5">
+		<div class="text-center">
 			<h1>Bootstrap starter template</h1>
 			<p class="lead">Welcome to our awesome website</p>
 		</div>
 		<div id="mapid">
 			<script>
-				function getColor(indice) {
-					return indice == "A" ? '#389C3B' :
-						indice == "B" ? '#1ED523' :
-						indice == "C" ? '#91E331' :
-						indice == "D" ? '#CCE526' :
-						indice == "E" ? '#CE6805' :
-						indice == "F" ? '#B35B05' :
-						indice == "G" ? '#FE4B01' :
-						'#FFEDA0';
+				function retrieveLocation() {
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							var result = this.responseText;
+							var ArrayResult = JSON.parse(result);
+
+						}
+					}
+					var url = new URL(window.location);
+					var URLres = new URLSearchParams(url.search);
+					var res = URLres.toString();
+					xmlhttp.open("GET", "requests/requestForm.php?" + res, true);
+					xmlhttp.send();
+
 				}
+
+				let colors = {
+					A: greenIcon,
+					B: greenIcon,
+					C: yellowIcon,
+					D: yellowIcon,
+					E: orangeIcon,
+					F: redIcon
+				}
+
+				function getColor(indice) {
+
+
+					return colors[indice] || blueIcon;
+				}
+
+
 
 
 				var mymap = L.map('mapid').setView([45.75, 4.85], 13);
@@ -57,8 +81,23 @@
 					accessToken: 'pk.eyJ1IjoianVsaWVuZiIsImEiOiJjazZ4dThjajEwN3owM2xta3p5NWN2eWc4In0.xL40ESstdyAMz6gjlVQ2fw'
 
 				}).addTo(mymap);
+				const geocoder = new L.Control.Geocoder.Nominatim("FR");
+				const formResult = {
+					address: "52 ST. CLAIR",
+					indice: 'Z'
+				};
+				geocoder.geocode(formResult.address, (function(form, map, results) {
+					console.log(arguments)
+					DPE_indicator(results[0].properties, form.indice, map)
+				}).bind(null, formResult, mymap), {
+					countryCode: 'FR'
+				});
+
+
 
 				var marker = L.marker([45.75, 4.85]).addTo(mymap);
+
+
 
 				/*var greenIcon = new L.Icon({
 					iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-green.png',
@@ -99,11 +138,16 @@
 					onEachFeature: onEachFeature
 				}).addTo(mymap);
 */
-				function DPE_indicator(x, y, indice, map) {
+				function DPE_indicator({
+					lat,
+					lon
+				}, indice, map) {
 
 					var color = getColor(indice);
 
-					var marker = L.marker([x, y]).addTo(map);
+					var marker = L.marker([lat, lon], {
+						icon: color
+					}).addTo(map);
 					marker.bindPopup("Indice DPE : " + indice);
 
 
