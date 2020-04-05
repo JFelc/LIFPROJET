@@ -70,18 +70,18 @@
 
 
 
-					var Replacer = document.getElementById("Replace-form");
+					var Replacer = document.getElementById("Replace-form-dep");
 
 					//Faire une condition avec str pour le script d'auto.
 					//Typiquement un if(str) -> 
 
 
-					var dataList = document.getElementById('datalist-replacer');
+					var dataList = document.getElementById('datalist-replacer-dep');
 
 					ArrayResult.forEach(function(item) {
 						var options = document.createElement('option');
-
-						options.value = item.dep_name;
+						options.textContent = item.dep_name;
+						options.value = item.num_dep;
 						dataList.appendChild(options);
 					});
 
@@ -103,13 +103,13 @@
 
 
 
-					var Replacer = document.getElementById("Replace-form");
+					var Replacer = document.getElementById("Replace-form-town");
 
 					//Faire une condition avec str pour le script d'auto.
 					//Typiquement un if(str) -> 
 
 
-					var dataList = document.getElementById('datalist-replacer');
+					var dataList = document.getElementById('datalist-replacer-town');
 
 					ArrayResult[0].values.forEach(function(item) {
 						var options = document.createElement('option');
@@ -134,6 +134,8 @@
 
 			if (region.options[region.selectedIndex].text == 'Région') {
 				showHint();
+				document.getElementById('Replace-form-dep').style.display = "none";
+				document.getElementById('Replace-form-town').style.display = "none";
 				document.getElementById('Year-select').style.display = "block";
 				document.getElementById('Replace-form').style.display = "block";
 				var Replace = document.createTextNode("Nom de la Région");
@@ -146,16 +148,21 @@
 			} else if (region.options[region.selectedIndex].text == 'Département') {
 				showHintDep();
 				document.getElementById('Year-select').style.display = "block";
-				document.getElementById('Replace-form').style.display = "block";
+				document.getElementById('Replace-form').style.display = "none";
+				document.getElementById('Replace-form-town').style.display = "none";
+				document.getElementById('Replace-form-dep').style.display = "block";
 				var Replace = document.createTextNode("Nom du département");
-				var LabelReplace = document.getElementById("Replacer");
+				var LabelReplace = document.getElementById("Replacer-dep");
 				LabelReplace.appendChild(Replace);
+
 			} else if (region.options[region.selectedIndex].text == 'Commune') {
 				showHintTown();
+				document.getElementById('Replace-form-dep').style.display = "none";
+				document.getElementById('Replace-form').style.display = "none";
 				document.getElementById('Year-select').style.display = "block";
-				document.getElementById('Replace-form').style.display = "block";
+				document.getElementById('Replace-form-town').style.display = "block";
 				var Replace = document.createTextNode("Nom de la ville");
-				var LabelReplace = document.getElementById("Replacer");
+				var LabelReplace = document.getElementById("Replacer-town");
 				LabelReplace.appendChild(Replace);
 			}
 
@@ -173,9 +180,8 @@
 					<select name="Geo" id="Geo-select" onchange="ChoixAffichage()">
 						<option value=""> Choisissez une option </option>
 						<option value="Region"> Région</option>
-						<option value=" Departement "> Département</option>
-						<option value=" EPCI "> EPCI </option>
-						<option value=" Commune "> Commune </option>
+						<option value="Departement"> Département</option>
+						<option value="Commune"> Commune </option>
 					</select>
 				</div>
 				<div class="col-sm" id="Year-select">
@@ -189,6 +195,19 @@
 					<label id="Replacer" for="Replace"></label>
 					<input type="text" name="input_replacer" id="ajax" list="datalist-replacer">
 					<datalist id="datalist-replacer"> </datalist> </input>
+
+				</div>
+				<div class="col-sm" id="Replace-form-dep">
+					<label id="Replacer-dep" for="Replace"></label>
+					<input type="text" name="input_replacer_dep" id="ajax2" list="datalist-replacer-dep">
+					<datalist id="datalist-replacer-dep"> </datalist> </input>
+
+				</div>
+				<div class="col-sm" id="Replace-form-town">
+					<label id="Replacer-town" for="Replace"></label>
+					<input type="text" name="input_replacer_town" id="ajax3" list="datalist-replacer-town">
+					<datalist id="datalist-replacer-town"> </datalist> </input>
+
 				</div>
 				<input type="submit" id="Submit" value="Envoyer"></input>
 			</form>

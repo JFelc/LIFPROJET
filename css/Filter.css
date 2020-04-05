@@ -34,6 +34,8 @@
 }
 
 #Year-select,
-#Replace-form {
+#Replace-form,
+#Replace-form-dep,
+#Replace-form-town {
 	display: none;
 }

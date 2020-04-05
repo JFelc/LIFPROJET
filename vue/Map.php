@@ -39,13 +39,14 @@
 		</div>
 		<div id="mapid">
 			<script>
-				function retrieveLocation() {
+				function retrieveLocation(callback) {
 					var xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange = function() {
 						if (this.readyState == 4 && this.status == 200) {
 							var result = this.responseText;
-							var ArrayResult = JSON.parse(result);
-
+							var arrayResult = JSON.parse(result);
+							console.log(arrayResult);
+							callback(arrayResult);
 						}
 					}
 					var url = new URL(window.location);
@@ -81,19 +82,24 @@
 					accessToken: 'pk.eyJ1IjoianVsaWVuZiIsImEiOiJjazZ4dThjajEwN3owM2xta3p5NWN2eWc4In0.xL40ESstdyAMz6gjlVQ2fw'
 
 				}).addTo(mymap);
-				const geocoder = new L.Control.Geocoder.Nominatim("FR");
-				const formResult = {
-					address: "52 ST. CLAIR",
-					indice: 'Z'
-				};
-				geocoder.geocode(formResult.address, (function(form, map, results) {
-					console.log(arguments)
-					DPE_indicator(results[0].properties, form.indice, map)
-				}).bind(null, formResult, mymap), {
-					countryCode: 'FR'
+				//				const geocoder = new L.Control.Geocoder.Nominatim("FR");
+				//				const formResult = {
+				//					address: "52 ST. CLAIR",
+				//					indice: 'Z'
+				//				};
+				//geocoder.geocode(formResult.address, (function(form, map, results) {
+				//	console.log(arguments)
+				//	DPE_indicator(results[0].properties, form.indice, map)
+				//}).bind(null, formResult, mymap), {
+				//	countryCode: 'FR'
+				//});
+
+
+				retrieveLocation(function(result) {
+					result.forEach(location => {
+						DPE_indicator(location, mymap);
+					});
 				});
-
-
 
 				var marker = L.marker([45.75, 4.85]).addTo(mymap);
 
@@ -139,9 +145,10 @@
 				}).addTo(mymap);
 */
 				function DPE_indicator({
-					lat,
-					lon
-				}, indice, map) {
+					latitude: lat,
+					longitude: lon,
+					dpeenergie: indice
+				}, map) {
 
 					var color = getColor(indice);
 
