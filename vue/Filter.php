@@ -229,7 +229,7 @@
 				<div class="col-sm" id="Replace-form-town">
 					<label id="Replacer-town" for="Replace"></label>
 					<!--					<template id="Replace-template">-->
-					<input type="text" name="input_replacer_town" id="ajax3" list="datalist-replacer-town">
+					<input type="text" name="input_replacer_town" id="ajax3" list="datalist-replacer-town" size="15">
 					<datalist id="datalist-replacer-town"> </datalist> </input>
 					<!--					</template>-->
 				</div>
