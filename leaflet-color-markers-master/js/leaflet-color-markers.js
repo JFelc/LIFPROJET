@@ -34,6 +34,67 @@ var greenIcon = new L.Icon({
 	shadowSize: [41, 41]
 });
 
+var newGreenIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newGreen.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+var newMoreGreenIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newMoreGreen.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+var newOrangeIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newOrange.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+var newMoreOrangeIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newMoreOrange.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+var newRedIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newRed.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+var newYellowIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newYellow.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var newLessYellowIcon = new L.Icon({
+	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-newLessYellow.png',
+	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+
+
+
 var orangeIcon = new L.Icon({
 	iconUrl: 'leaflet-color-markers-master/img/marker-icon-2x-orange.png',
 	shadowUrl: 'leaflet-color-markers-master/img/marker-shadow.png',

@@ -36,6 +36,12 @@
 #Year-select,
 #Replace-form,
 #Replace-form-dep,
-#Replace-form-town {
+#Replace-form-town,
+#Limit-select {
 	display: none;
+}
+
+#datalist-replacer-town {
+	overflow: hidden;
+	height: 10em;
 }

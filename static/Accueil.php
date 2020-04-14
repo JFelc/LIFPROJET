@@ -29,39 +29,21 @@ error_reporting(E_ALL); ?>
 
 	<main role="main" class="container" id="conteneur_principal">
 
-		<div class="container" id="caroussel">
 
-			<p> je suis le caroussel</p>
 
-		</div>
-
-		<div class="container" id="graph_accueil">
-			<div class="row">
-
-				<div class="col-sm">
-
-					<!-- Premier graph -->
-
-				</div>
-
-				<div class="col-sm">
-					<!-- Deuxième graph -->
-					<p>2e graph</p>
-				</div>
-
-				<div class="col-sm">
-					<!-- Troisième graph -->
-					<p>3e graph</p>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="row" id="text_accueil">
-			<p>
-				Bonjour c'est la page d'accueil.
+		<div class="col-sm">
+			<p id="accueilMsg">
+				<h1 id="title">Bienvenue sur notre site ! </h1></br>
+				De rapides instructions quant à l'utilisation du site : </br>
+				Vous devez vous rendre sur la page "Filtre" ou cliquez sur le lien ci-dessous.
+				Ensuite, vous choisissez l'endroit ciblé ainsi que l'année sur laquelle vous voulez filtrer.
+				Enfin, il vous suffit de valider votre formulaire et vous serez redirigé vers la carte avec vos paramètres personnalisés.
 			</p>
+
+			<h1 id="linkFilter"><a href="http://lif.sci-web.net/~logementsociaux/index.php?page=Filter"> Filtre !</a></h1>
+
 		</div>
+
 
 	</main><!-- /.container -->
 

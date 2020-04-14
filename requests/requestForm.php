@@ -1,6 +1,7 @@
 <?php
 error_reporting(-1);
 ini_set('display_errors', 'On');
+
 function filterType($resType){
 	$filter_type = "";
 	if($resType == 'Departement'){
@@ -29,13 +30,20 @@ function filterValue($resValue){
 	return $filter_value;
 }
 
+//function filterLimit($resValue){
+// return $limit = 'limit_aff';
+//}
 function buildFilter($filterValue, $filterType){
 	
 	
 
-	if($filterType == 'Departement'){
+	if(($filterType == 'Departement') || ($filterType == 'Region')){
 		$regex = new MongoDB\BSON\Regex("^".$_GET[$filterValue], 'i');
 		return ['$regex' => $regex];
+	}
+	if($filterType == 'Commune'){
+		$regex = new MongoDB\BSON\Regex($_GET[$filterValue], 'i');
+			return ['$regex' =>$regex];
 	}
 	return ['$eq' => $_GET[$filterValue]];
 }
@@ -46,6 +54,7 @@ $res_test = $_GET["Geo"];
 $res = filterType($res_test);
 $resValue = filterValue($res_test);
 
+//$resLimit = filterLimit($res_test);
 $queryValue = buildFilter($resValue, $res_test);
 
 //var_dump($res);
@@ -57,11 +66,13 @@ $queryValue = buildFilter($resValue, $res_test);
 //'distinct' => ['France'.$_GET["Year"]
 
 
+
+
 $m = new  MongoDB\Driver\Manager("mongodb://localhost:27017");
 							$filter = [$res => $queryValue];
-							$options = ['limit' => 2000];
+							$options = ['limit' => 1500];
   							$query = new MongoDB\Driver\Query($filter,$options);
-							$cursor = $m->executeQuery('Logements.France'.$_GET["Year"], $query);
+							$cursor = $m->executeQuery('Logements.France'.$_GET['Year'], $query);
 							$tab = iterator_to_array($cursor);
 							echo json_encode($tab);							
 						

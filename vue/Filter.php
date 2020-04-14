@@ -138,6 +138,7 @@
 				document.getElementById('Replace-form-town').style.display = "none";
 				document.getElementById('Year-select').style.display = "block";
 				document.getElementById('Replace-form').style.display = "block";
+				//				document.getElementById('Limit-select').style.display = "block";
 				var Replace = document.createTextNode("Nom de la Région");
 				var labelReplace = document.getElementById("Replacer");
 				labelReplace.appendChild(Replace);
@@ -150,6 +151,7 @@
 				document.getElementById('Year-select').style.display = "block";
 				document.getElementById('Replace-form').style.display = "none";
 				document.getElementById('Replace-form-town').style.display = "none";
+				//				document.getElementById('Limit-select').style.display = "block";
 				document.getElementById('Replace-form-dep').style.display = "block";
 				var Replace = document.createTextNode("Nom du département");
 				var LabelReplace = document.getElementById("Replacer-dep");
@@ -157,16 +159,33 @@
 
 			} else if (region.options[region.selectedIndex].text == 'Commune') {
 				showHintTown();
+
 				document.getElementById('Replace-form-dep').style.display = "none";
 				document.getElementById('Replace-form').style.display = "none";
 				document.getElementById('Year-select').style.display = "block";
+				//				document.getElementById('Limit-select').style.display = "block";
 				document.getElementById('Replace-form-town').style.display = "block";
+				//				limitDatalist();
 				var Replace = document.createTextNode("Nom de la ville");
 				var LabelReplace = document.getElementById("Replacer-town");
 				LabelReplace.appendChild(Replace);
+
 			}
 
 		}
+
+		//		function limitDatalist() {
+		//
+		//
+		// var search = document.querySelector('#ajax3');
+		// var results = document.querySelector('#datalist-replacer-town');
+		// var templateContent = document.querySelector('#Replace-template').content;
+		// search.addEventListener('keyup', function handler(event) {
+		// while (results.children.length) results.removeChild(results.firstChild);
+		// var inputVal = new RegExp(search.value.trim(), 'i');
+		// var clonedOptions = templateContent.cloneNode(true);
+		// var set = Array.prototype.reduce.call(clonedOptions.children, function searchFilter(frag, el) {
+		// if (inputVal.test(el.textContent) && frag.children.length < 5) frag.appendChild(el); // return frag; // }, document.createDocumentFragment()); // results.appendChild(set); // }); // }
 
 	</script>
 
@@ -191,6 +210,10 @@
 						<option value="2017"> 2017</option>
 					</select>
 				</div>
+				<!--				<div class="col-sm" id="Limit-select">-->
+				<!--					<label for="Limit">Limite d'affichage :</label>-->
+				<!--					<input name="limit_aff" id="number-limit" type="number" value="10" min="10" max="8500"></input>-->
+				<!--				</div>-->
 				<div class="col-sm" id="Replace-form">
 					<label id="Replacer" for="Replace"></label>
 					<input type="text" name="input_replacer" id="ajax" list="datalist-replacer">
@@ -205,9 +228,10 @@
 				</div>
 				<div class="col-sm" id="Replace-form-town">
 					<label id="Replacer-town" for="Replace"></label>
+					<!--					<template id="Replace-template">-->
 					<input type="text" name="input_replacer_town" id="ajax3" list="datalist-replacer-town">
 					<datalist id="datalist-replacer-town"> </datalist> </input>
-
+					<!--					</template>-->
 				</div>
 				<input type="submit" id="Submit" value="Envoyer"></input>
 			</form>

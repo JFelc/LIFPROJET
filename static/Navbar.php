@@ -16,15 +16,10 @@
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="index.php?page=Graph">Stats</a>
-			</li>
-
-			<li class="nav-item">
 				<a class="nav-link" href="index.php?page=Map">Carte</a>
 			</li>
 
-			<li class="nav-item">
-				<a class="nav-link" href="#">À propos</a>
+			<li class="nav-item"><a class="nav-link" href="#">À propos</a>
 			</li>
 		</ul>
 	</div>

@@ -1,16 +1,22 @@
-#conteneur_principal
-{
-	margin-top: 5em ;
+#conteneur_principal {
+	margin-top: 5em;
 }
 
-.container
-{
-	margin-top: 2em ;
-	border: solid 1px ;
+.container {
+	margin-top: 2em;
+	border: solid 1px;
 }
 
-#text_accueil
-{
-	margin-top: 2em ;
-	padding: 1em ;
+#text_accueil {
+	margin-top: 2em;
+	padding: 1em;
+}
+
+#accueilMsg {
+	text-align: center;
+}
+
+#title,
+#linkFilter {
+	text-align: center;
 }
