@@ -9,10 +9,10 @@ Le projet permet actuellement de filtrer des résultats selon certains critères
 ### En cas de problème
 Le site utilise un serveur Apache ainsi qu'une base de données MongoDB. Si vous l'utiliser sur le serveur fourni, les services Apache et MongoDB devrait déjà être présents. 
 Si le serveur Apache a été redémarré et que MongoDB n'est plus en marche, veuillez suivre les instructions suivantes :
-Ouvrez un terminal sous Linux et connectez vous en ssh au serveur via la commande suivante : ssh logementsociaux@lif.sci-web.net. 
+Ouvrez un terminal sous Linux et connectez vous en ssh au serveur via la commande suivante : `ssh logementsociaux@lif.sci-web.net `.
 Si vous ne connaissez pas le mot de passe, c'est que vous n'êtes pas censé le connaître au départ, donc je n'y peux rien. 
-Lancez ensuite la commande sudo mongod. Relancez un nouveau terminal et connectez vous de nouveau au serveur. 
-Ensuite, lancez mongo pour vérifier que la base de données est lancée. 
+Lancez ensuite la commande `sudo mongod`. Relancez un nouveau terminal et connectez vous de nouveau au serveur. 
+Ensuite, lancez `mongo` pour vérifier que la base de données est lancée. 
 
 ## Organisation 
 
