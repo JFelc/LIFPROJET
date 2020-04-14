@@ -49,4 +49,4 @@ Le css est une feuille de stlye qui permet de manipuler l'apparence d'une page w
 
 
 ## Résultats
-![Image Résultat](/Images/Capture.png?raw=true)
+![Image Résultat](/Images/Capture.PNG?raw=true)
