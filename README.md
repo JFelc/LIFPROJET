@@ -47,3 +47,6 @@ Les images que nous avons utilisés
 ### css
 Le css est une feuille de stlye qui permet de manipuler l'apparence d'une page web. Nous disposons donc d'un fichier css pour chaque page.
 
+
+## Résultats
+![Image Résultat](/Images/Capture.png?raw=true)
