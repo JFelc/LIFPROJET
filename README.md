@@ -14,6 +14,8 @@ Si vous ne connaissez pas le mot de passe, c'est que vous n'êtes pas censé le 
 Lancez ensuite la commande `sudo mongod`. Relancez un nouveau terminal et connectez vous de nouveau au serveur. 
 Ensuite, lancez `mongo` pour vérifier que la base de données est lancée. 
 
+L'accès à la page d'accueil se fait via ce lien : http://lif.sci-web.net/~logementsociaux/index.php
+
 ## Organisation 
 
 ### vue

@@ -10,7 +10,7 @@ error_reporting(E_ALL); ?>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="../../../../favicon.ico">
-	<title>Starter Template · Bootstrap</title>
+	<title>Lifprojet</title>
 
 	<!--Template based on URL below-->
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
