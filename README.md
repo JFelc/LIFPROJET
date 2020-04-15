@@ -36,8 +36,8 @@ Rien de particulier ici.
 
 ### requests
 Ce dossier contient les fichiers utilisés dans les appals AJAX. 2 de ces fichiers utilisent la base de données et le dernier est simplement un json.  
-Les fichiers PHP créent une requête MongoDB pour faire appel à la base de données et effectuent le filtre demandé.
-Les requêtes ont une taille limite fixé à 1500, pour éviter que le navigateur crash ou que le temps d'attente soit trop long. 
+Les fichiers PHP créent une requête MongoDB pour faire appel à la base de données et effectuent le filtre demandé.  
+Les requêtes ont une taille limite fixé à 1500, pour éviter que le navigateur crash ou que le temps d'attente soit trop long.  
 Cependant, 1500 objets ne seront pas affichés, ils seront comptés dans les graphiques, mais impossible de tous les faire apparaître car plusieurs possèdent les mêmes coordonnées (Plusieurs appartements dnas un immeuble).
 
 
