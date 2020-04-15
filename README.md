@@ -22,6 +22,7 @@ L'accès à la page d'accueil se fait via ce lien : http://lif.sci-web.net/~loge
 #### filter
 Le dossier vue contient deux fichiers PHP : Map.php et Filter.php. Filter.php est la page responsable du filtre, il réalise un appel AJAX à un fichier json pour récupérer les noms des département et leurs numéros et il en réalise un autre à la base de données pour appeler les noms des villes.
 En fonction de votre choix, à chaque fois, une partie du site disparait pour laisser place unqiquement à la zone que vous avez choisi.
+On passe par des GET pour récupérer des données, c'est plus simple, et bon, ça n'a pas réellement d'importance qu'on voit ce qu'à choisi l'utilisateur dans l'URL, il n'y a rien de privé ou personnel.
 Il utilise un système de datalist, une balise HTML, pour réaliser une liste qui fait des suggestions. Il se base donc sur les informations que vous avez choisi pour cela.
 #### Map
 Map.php est le fichier gérant la carte, il réalise lui aussi un appel AJAX pour récupérer les données et les afficher.
@@ -35,7 +36,10 @@ Rien de particulier ici.
 
 ### requests
 Ce dossier contient les fichiers utilisés dans les appals AJAX. 2 de ces fichiers utilisent la base de données et le dernier est simplement un json.
-Les fichiers PHP créent une requête Mongo pour faire appel à la base de données et effectuent le filtre demandé. 
+Les fichiers PHP créent une requête MongoDB pour faire appel à la base de données et effectuent le filtre demandé. 
+Les requêtes ont une taille limite fixé à 1500, pour éviter que le navigateur crash ou que le temps d'attente soit trop long. 
+Cependant, 1500 objets ne seront pas affichés, ils seront comptés dans les graphiques, mais impossible de tous les faire apparaître car plusieurs possèdent les mêmes coordonnées (Plusieurs appartements dnas un immeuble).
+
 
 ### leaflet-color-marker-master/include
 Les différentes librairies que nous utilisons, ainsi qu'un fichier permettant de faire les liens entre les fichiers.
